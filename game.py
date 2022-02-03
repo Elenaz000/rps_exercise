@@ -6,7 +6,10 @@
 # ... https://github.com/prof-rossetti/intro-to-python/blob/main/exercises/rock-paper-scissors/README.md
 #
 
-print ("Welcome 'Player One' to my Rock-Paper-Scissors game...")
+import os
+player_name = os.environ.get("PLAYER_NAME", default="Player One")
+
+print ("Welcome ", player_name, " to my Rock-Paper-Scissors game...")
 print ("-------------------------------------------------------")
 #ask for input
 x=input("what is your choice? rock, paper, or scissors? ").lower()
@@ -16,7 +19,7 @@ if x in option:
     print ("You chose: '" + x + "'")
 
 else: 
-    print ("invalid data")
+    print ("OOPS...invalid data")
     exit ()
 
 #computer choice
@@ -51,6 +54,9 @@ print ("------------------------------------------------------")
 #    else:
 #        print(“Paper covers rock You lost! It’s ok.“)
 
+
+
+
 if (x == y) :
     print ("Oh, that is a tie.")
 elif ((x == "rock") and (y == "paper")) :
@@ -73,3 +79,5 @@ elif ((x == "scissors") and (y == "paper")) :
 #final result
 print ("--------------------------------------------------------")
 print ("Thanks for playing. Please play again!")
+
+
